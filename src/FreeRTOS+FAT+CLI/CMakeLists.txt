@@ -23,7 +23,6 @@ target_sources(FreeRTOS+FAT+CLI INTERFACE
         portable/RP2040/SDIO/sd_card_sdio.c
         portable/RP2040/SDIO/rp2040_sdio.c
         src/ff_utils.c
-        src/freertos_callbacks.c
         src/FreeRTOS_strerror.c
         src/FreeRTOS_time.c
         src/my_debug.c
@@ -32,7 +31,8 @@ target_sources(FreeRTOS+FAT+CLI INTERFACE
 target_link_libraries(FreeRTOS+FAT+CLI INTERFACE
         cmsis_core
         FreeRTOS-Kernel
-        FreeRTOS-Kernel-Heap4
+		FreeRTOS-Kernel-Static
+		FreeRTOS-Kernel-Heap3
         hardware_adc
         hardware_clocks
         hardware_dma
